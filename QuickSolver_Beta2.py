@@ -1,11 +1,11 @@
 import os
 os.system('cls')
 
-import time
+import time 
 
 listaUsers = []
 
-def timer():
+def timer(): #função para fazer a contagem regressiva
     funcionando = True
     segundos = 15
     fim = 0
@@ -22,7 +22,7 @@ def timer():
     print('Obrigado por aguardar!')
     return 
 
-def home_page():
+def home_page(): #função que funciona como a homepage
     os.system('cls')
     print('QuickSolver')
     next = int(input('Acesso Chambres[0] ou Acesso Hóspede[1]: '))
@@ -33,7 +33,7 @@ def home_page():
     else:
         return home_page()
 
-def tela_escolha_gerencia_or_funcionario():
+def tela_escolha_gerencia_or_funcionario(): #função que seria a página inicial do gerente e funcionários
     os.system('cls')
     print('QuickSolver')
     next = input('Acesso gerência[0], Acesso funcionários[1] ou voltar para a Home Page[2]: ')
@@ -46,7 +46,7 @@ def tela_escolha_gerencia_or_funcionario():
     else:
         return tela_escolha_gerencia_or_funcionario()
 
-def tela_inicial_chambres_gerente():
+def tela_inicial_chambres_gerente(): #função que seria a página inicial do gerente com o menu de login
     os.system('cls')
     print('QuickSolver')
     voltar = input('Deseja voltar? [S] ou [N]').upper()
@@ -71,7 +71,7 @@ def tela_inicial_chambres_gerente():
     else:
         return tela_inicial_chambres_gerente()
 
-def tela_chambres_gerente2():
+def tela_chambres_gerente2(): #função com a tela que seria a página com o menu de opções para o gerente
     os.system('cls')
     print('QuickSolver')
     next=input('Digite para: \n0.Ver as notificações dos hóspedes \n1. Resolver problema do hóspede \n2. Ver os feedbacks \n3. Cadastrar funcionário \n4. Encerrar sessão : ')
@@ -92,7 +92,7 @@ def tela_chambres_gerente2():
         return tela_chambres_gerente2()
     
 
-def tela_notificoes():
+def tela_notificoes(): #função com a tela de notificações comuns ao gerente e funcionários
     os.system('cls')
     print('QuickSolver')
     print('NOTIFICAÇÕES')
@@ -101,7 +101,7 @@ def tela_notificoes():
     time.sleep(5)
     return tela_chambres_gerente2()
 
-def resolver_problemas():
+def resolver_problemas(): #função com a tela de solucionar problemas (gerente)
     os.system('cls')
     print('QuickSolver')
     chave = input('Qual o quarto que você quer resolver o problema?: ')
@@ -114,7 +114,7 @@ def resolver_problemas():
         time.sleep(1.5)
     return tela_chambres_gerente2()
 
-def ver_notas():
+def ver_notas(): #função com a tela de ver os feedbacks dos clientes (Exclusivo à gerência)
     os.system('cls')
     print('QuickSolver')
     print('FEEDBACKS')
@@ -123,7 +123,7 @@ def ver_notas():
     time.sleep(5)
     return tela_chambres_gerente2()
 
-def cadastro():
+def cadastro(): #função com a tela de cadastro de funcionários (Exclusivo à gerência)
     os.system('cls')
     print('QuickSolver')
     next=input('Digite para: \n0.Ver funcionários cadastrados \n1. Recadastrar usuário e senha \n2. Cadastrar novo usuário\n3. Remover usuário \n4. Voltar ao menu inicial\n: ')
@@ -175,7 +175,7 @@ def cadastro():
         return cadastro()
 
 
-def tela_inicial_chambres_func():
+def tela_inicial_chambres_func(): #função que seria a página inicial do funcionários com o menu de login
     os.system('cls')
     print('QuickSolver')
     voltar = input('Deseja voltar? [S] ou [N]').upper()
@@ -200,7 +200,7 @@ def tela_inicial_chambres_func():
     else:
         return tela_inicial_chambres_func()
 
-def tela_chambres_func2():
+def tela_chambres_func2(): #função com a tela de notificações comuns ao gerente e funcionários
     os.system('cls')
     print('QuickSolver')
     print('NOTIFICAÇÕES')
@@ -209,7 +209,7 @@ def tela_chambres_func2():
     time.sleep(5)
     return tela_chambres_func3()
 
-def tela_chambres_func3():
+def tela_chambres_func3(): #função com a tela que seria a página com o menu de opções para os funcionários
     os.system('cls')
     print('QuickSolver')
     next=input('Digite para: 0.Rever as notificações, 1. Resolver problema do hóspede ou 2. Encerrar sessão: ')
@@ -225,7 +225,7 @@ def tela_chambres_func3():
     else:
         return tela_chambres_func3()
 
-def tela_chambres_func4():
+def tela_chambres_func4(): #função com a tela de solucionar problemas (funcionários)
     os.system('cls')
     print('QuickSolver')
     chave = input('Qual o quarto que você quer resolver o problema?: ')
@@ -243,7 +243,7 @@ def tela_chambres_func4():
         return home_page()
 
 
-def tela_inicial_hosp():
+def tela_inicial_hosp(): #função com a tela inicial dos hóspedes
     os.system('cls')
     print('QuickSolver')
     print('Resolvemos seu problema em 15min')
@@ -259,7 +259,7 @@ def tela_inicial_hosp():
     else:
         return tela_inicial_hosp()
 
-def menu_h_quarto():
+def menu_h_quarto(): #função com a tela que recebe o quarto com problema pelo hóspede
     os.system('cls')
     print('QuickSolver')
     chave = input('Qual quarto você está hóspedado? ')
@@ -276,7 +276,7 @@ def menu_h_quarto():
             return home_page()  
       
 
-def menu_h1(chave):
+def menu_h1(chave): #função com a tela que recebe o tipo de problema pelo hóspede(Apenas as opções 0 e 5 funcionam)
     os.system('cls')
     resp1=input('0. Limpeza\n1. Manutenção\n2. Incômodos\n3. Solicitar itens\n4. Outros\n5. voltar\nResposta: ')
     print(chave)
@@ -288,7 +288,7 @@ def menu_h1(chave):
     else:
         return menu_h1()
 
-def menu_h2(chave):
+def menu_h2(chave): #função com a tela que recebe o subtipo de problema pelo hóspede(Apenas as opções 0 e 5 funcionam)
     os.system('cls')
     resp2=input('0. Itens não foram trocados\n1. Enxoval não adequado\n2. Roupas de cama sujas\n3. Limpar quarto\n4. Outros\n5.voltar\nResposta: ')
     if resp2 == '0':
@@ -299,7 +299,7 @@ def menu_h2(chave):
     else:
         return menu_h2()
 
-def menu_h22(chave):
+def menu_h22(chave): #função com a tela que recebe o comentário do hóspede
     os.system('cls')
     a=input('Descrever seu problema(opcional)\nSim[S] OU Não[N]: ').upper()
     if a == 'S' or a == 'SIM':
@@ -315,7 +315,7 @@ def menu_h22(chave):
     timer()
     return menu_h3(chave)
 
-def menu_h3(chave):
+def menu_h3(chave): #função com a tela que recebe o feedback do hóspede para o atendimento
     os.system('cls')
     print('Avaliação')
     print('Como foi nosso atendimento?')
@@ -323,21 +323,21 @@ def menu_h3(chave):
     nota[chave]=[tradução[chavenotas]]
     return menu_h32(chave)
 
-def menu_h32(chave):
+def menu_h32(chave): #função com a tela que recebe o feedback do hóspede para o hotel
     os.system('cls')
     print('Avalie nosso hotel')
     chavenotas=input('0. Péssimo\n1. Ruim\n2. Bom\n3. Ótimo\n4. Excelente\n: ')
     nota[chave].append(tradução[chavenotas])
     return menu_h33(chave)
 
-def menu_h33(chave):
+def menu_h33(chave): #função com a tela que recebe o feedback do hóspede para o funcionário
     os.system('cls')
     print('Avalie Joseane')
     chavenotas=input('0. Péssimo\n1. Ruim\n2. Bom\n3. Ótimo\n4. Excelente\n: ')
     nota[chave].append(tradução[chavenotas])
     return tela_final()
 
-def tela_final():
+def tela_final(): #função com a tela final do hóspede
     os.system('cls') 
     print('Quick Solver')
     print('Obrigada pela avaliação')
